@@ -4,85 +4,47 @@ var isNumber = /\d/g;
 var isNotNumber = /[^\d]/g;
 var digitToRomanNumeral = [];
 var digits = [];
+var someArray = [];
 
 var romanNumeralConverter = function(number) {
-  if (number.toString().match(isNotNumber)) {
+  if (number.toString().match(isNotNumber) || number < 1 || number > 3999) {
     console.log("Log(1)");
-    return "Error! You did not enter a number!";
-  } else if (number < 1 || number > 3999 ) {
-    console.log("Log(2)");
-    return "Please enter a number between 1 and 3,999";
+    return "Error! Please enter a number between 1 and 3,999.";
   } else {
     digits.push(number);
     digits = digits.toString(10).split("").map(function(n){return parseInt(n)});
-
-    //Function for converting digits 1, 2, & 3
-    if (digits[digits.length - 1] < 4) {
-      for (var i = 1; i <= digits[digits.length - 1]; i++) {
-        digitToRomanNumeral.push("I");
+    for (var i = 1; i <= digits.length; i++) {
+      var index = digits[digits.length - i];
+      if (i === 1) {
+        someArray = ["I", "IV", "V", "IX"];
+      } else if (i === 2) {
+        someArray = ["X", "XL", "L", "XC"];
+      } else if (i === 3) {
+        someArray = ["C", "CD", "D", "CM"];
+      } else if (i === 4) {
+        someArray = ["M"];
+      } else {
+        alert("You broke the internet");
+      } if (index < 4) {
+        for (var j = 1; j <= index; j++) {
+          digitToRomanNumeral.unshift(someArray[0]);
+        }
+      } else if (index === 4) {
+        digitToRomanNumeral.unshift(someArray[1])
+      } else if (index >= 5 && index < 9) {
+        var fiveToNine = [];
+        fiveToNine.unshift(someArray[2]);
+        for (var k = 6; k <= index; k++) {
+          fiveToNine.push(someArray[0])
+        }
+        fiveToNine = fiveToNine.join("");
+        digitToRomanNumeral.unshift(fiveToNine);
+      } else if (index === 9) {
+        digitToRomanNumeral.unshift(someArray[3])
+      } else {
+        alert("You broke the internet again!");
       }
-
-    } else if (digits[digits.length - 1] === 4) {
-      digitToRomanNumeral.push("IV");
-    } else if (digits[digits.length - 1] >= 5 && digits[digits.length - 1] < 9) {
-      digitToRomanNumeral.push("V")
-      for (var i = 6; i <= digits[digits.length - 1]; i++) {
-        digitToRomanNumeral.push("I");
-      }
-    } else if (digits[digits.length - 1] === 9) {
-      digitToRomanNumeral.push("IX");
-    } else {
-      console.log("Error!")
-    } //End of 'first digit' conversion.
-
-    if (digits[digits.length - 2] < 4) {
-      for (var i = 1; i <= digits[digits.length - 2]; i++) {
-        digitToRomanNumeral.unshift("X");
-      }
-
-    } else if (digits[digits.length - 2] === 4) {
-      digitToRomanNumeral.unshift("XL");
-    } else if (digits[digits.length - 2] >= 5 && digits[digits.length - 2] < 9) {
-      var fiveToNine = [];
-      fiveToNine.unshift("L")
-      for (var i = 6; i <= digits[digits.length - 2]; i++) {
-        fiveToNine.push("X");
-      }
-      fiveToNine = fiveToNine.join("");
-      digitToRomanNumeral.unshift(fiveToNine);
-    } else if (digits[digits.length - 2] === 9) {
-      digitToRomanNumeral.unshift("XC");
-    } else {
-      console.log("No second digit")
-    } //End of 'second digit' conversion.
-
-    if (digits[digits.length - 3] < 4) {
-      for (var i = 1; i <= digits[digits.length - 3]; i++) {
-        digitToRomanNumeral.unshift("C");
-      }
-    } else if (digits[digits.length - 3] === 4) {
-      digitToRomanNumeral.unshift("CD");
-    } else if (digits[digits.length - 3] >= 5 && digits[digits.length - 3] < 9) {
-      var fiveToNine = [];
-      fiveToNine.unshift("D")
-      for (var i = 6; i <= digits[digits.length - 3]; i++) {
-        fiveToNine.push("C");
-      }
-      fiveToNine = fiveToNine.join("");
-      digitToRomanNumeral.unshift(fiveToNine);
-    } else if (digits[digits.length - 3] === 9) {
-      digitToRomanNumeral.unshift("CM");
-    } else {
-      console.log("No third digit")
-    } //End of 'Third digit' conversion.
-
-    if (digits[digits.length - 4] < 4) {
-      for (var i = 1; i <= digits[digits.length - 4]; i++) {
-        digitToRomanNumeral.unshift("M");
-      }
-    } else {
-      console.log("No fourth digit");
-    } //End of 'fourth digit' conversion.
+    }
   } //End of first 'else' statement.
   return digitToRomanNumeral.join("");
 }; //End of 'romanNumeralConverter' function.
