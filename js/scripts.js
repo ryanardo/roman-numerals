@@ -117,7 +117,15 @@ var romanNumeralConverter = function(number) {
       console.log("Log(14): HEY! No third digit value returned!");
     } //End of 'Third digit' conversion.
 
-
+    if (digits[digits.length - 4] < 4) {
+      for (var i = 1; i <= digits[digits.length - 4]; i++) {
+        digitToRomanNumeral.unshift("M");
+        console.log("Log(3)");
+      }
+      //Converting a digit of 4.
+    } else {
+      console.log("Log(8): HEY! No fourth digit value returned!");
+    } //End of 'fourth digit' conversion.
 
   } //End of first 'else' statement.
 
