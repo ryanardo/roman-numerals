@@ -12,18 +12,21 @@ _WebApp to convert numbers to their corresponding Roman Numeral._
 
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| Determine if it is a number | Hi! You are 10 years old! | FALSE |
-| Determine if number is greater than 0 and less than 4,000 | 4,000 | FALSE |
-| Convert a string of digits into an array of digits | 123 | "1", "2", "3" |
-| Recognize the length of a string of digits | 999 | 3 |
-| Convert digits 1, 2, & 3 | 1 | I |
-| Convert the digits 6, 7, & 8 | 8 | VIII |
+| Convert 1 to Roman Numeral | 1 | I |
+| Convert the digit 2 | 2 | II |
+| Convert the digit 3 | 3 | III |
 | Convert the digit 4 | 4 | IV |
-| Convert the digit 5 | 5 | IV |
+| Convert the digit 5 | 5 | V |
+| Convert the digit 6 | 6 | VI |
+| Convert the digit 8 | 8 | VIII |
 | Convert the digit 9 | 9 | IX |
 | Convert second digits similarly to first | 33 | XXXIII |
 | Convert third digits similarly to first | 333 | CCCXXXIII |
 | Convert fourth digits similarly to first | 3333 | MMMCCCXXXIII |
+| Determine if it is a number | Hi! You are 10 years old! | FALSE |
+| Determine if number is greater than 0 and less than 4,000 | 4,000 | FALSE |
+| Convert a string of digits into an array of digits | 123 | "1", "2", "3" |
+| Recognize the length of a string of digits | 999 | 3 |
 
 | Symbol | Value |
 | :-------------     | :------------- |

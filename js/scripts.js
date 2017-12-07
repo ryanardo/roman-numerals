@@ -24,9 +24,7 @@ var romanNumeralConverter = function(number) {
 
     } else if (digits[digits.length - 1] === 4) {
       digitToRomanNumeral.push("IV");
-    } else if (digits[digits.length - 1] === 5) {
-      digitToRomanNumeral.push("V");
-    } else if (digits[digits.length - 1] > 5 && digits[digits.length - 1] < 9) {
+    } else if (digits[digits.length - 1] >= 5 && digits[digits.length - 1] < 9) {
       digitToRomanNumeral.push("V")
       for (var i = 6; i <= digits[digits.length - 1]; i++) {
         digitToRomanNumeral.push("I");
@@ -44,9 +42,7 @@ var romanNumeralConverter = function(number) {
 
     } else if (digits[digits.length - 2] === 4) {
       digitToRomanNumeral.unshift("XL");
-    } else if (digits[digits.length - 2] === 5) {
-      digitToRomanNumeral.unshift("L");
-    } else if (digits[digits.length - 2] > 5 && digits[digits.length - 2] < 9) {
+    } else if (digits[digits.length - 2] >= 5 && digits[digits.length - 2] < 9) {
       var fiveToNine = [];
       fiveToNine.unshift("L")
       for (var i = 6; i <= digits[digits.length - 2]; i++) {
@@ -66,9 +62,7 @@ var romanNumeralConverter = function(number) {
       }
     } else if (digits[digits.length - 3] === 4) {
       digitToRomanNumeral.unshift("CD");
-    } else if (digits[digits.length - 3] === 5) {
-      digitToRomanNumeral.unshift("D");
-    } else if (digits[digits.length - 3] > 5 && digits[digits.length - 3] < 9) {
+    } else if (digits[digits.length - 3] >= 5 && digits[digits.length - 3] < 9) {
       var fiveToNine = [];
       fiveToNine.unshift("D")
       for (var i = 6; i <= digits[digits.length - 3]; i++) {
