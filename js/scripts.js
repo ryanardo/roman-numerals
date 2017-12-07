@@ -6,6 +6,10 @@ var digitToRomanNumeral = [];
 var digits = [];
 var someArray = [];
 
+var unshifter = function(thing) {
+  digitToRomanNumeral.unshift(thing);
+}
+
 var romanNumeralConverter = function(number) {
   if (number.toString().match(isNotNumber) || number < 1 || number > 3999) {
     console.log("Log(1)");
@@ -27,10 +31,10 @@ var romanNumeralConverter = function(number) {
         alert("You broke the internet");
       } if (index < 4) {
         for (var j = 1; j <= index; j++) {
-          digitToRomanNumeral.unshift(someArray[0]);
+          unshifter(someArray[0]);
         }
       } else if (index === 4) {
-        digitToRomanNumeral.unshift(someArray[1])
+        unshifter(someArray[1])
       } else if (index >= 5 && index < 9) {
         var fiveToNine = [];
         fiveToNine.unshift(someArray[2]);
@@ -38,9 +42,9 @@ var romanNumeralConverter = function(number) {
           fiveToNine.push(someArray[0])
         }
         fiveToNine = fiveToNine.join("");
-        digitToRomanNumeral.unshift(fiveToNine);
+        unshifter(fiveToNine);
       } else if (index === 9) {
-        digitToRomanNumeral.unshift(someArray[3])
+        unshifter(someArray[3])
       } else {
         alert("You broke the internet again!");
       }
