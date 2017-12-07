@@ -32,6 +32,7 @@ var romanNumeralConverter = function(number) {
     return "Please enter a number between 1 and 3,999";
   } else {
     digits.push(number);
+    digits = digits.toString(10).split("").map(function(n){return parseInt(n)})
     //digits.number.toString().split("");
 
     //Function for converting digits 1, 2, & 3
