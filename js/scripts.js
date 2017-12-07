@@ -32,7 +32,7 @@ var romanNumeralConverter = function(number) {
     return "Please enter a number between 1 and 3,999";
   } else {
     digits.push(number);
-    digits = digits.toString(10).split("").map(function(n){return parseInt(n)})
+    digits = digits.toString(10).split("").map(function(n){return parseInt(n)});
     //digits.number.toString().split("");
 
     //Function for converting digits 1, 2, & 3
@@ -59,8 +59,33 @@ var romanNumeralConverter = function(number) {
       console.log("Log(7)");
     } else {
         console.log("Log(8): Error! No value returned!");
+    } //End of 'first digit' conversion.
+
+    if (digits[digits.length - 2] < 4) {
+      for (var i = 1; i <= digits[digits.length - 2]; i++) {
+        digitToRomanNumeral.unshift("X");
+        console.log("Log(3)");
       }
-    }
+      //Converting a digit of 4.
+    } else if (digits[digits.length - 2] === 4) {
+      digitToRomanNumeral.unshift("XL");
+      console.log("Log(4)");
+    } else if (digits[digits.length - 2] === 5) {
+      digitToRomanNumeral.unshift("L");
+      console.log("Log(5)");
+    } else if (digits[digits.length - 2] > 5 && digits[digits.length - 2] < 9) {
+      digitToRomanNumeral.unshift("L")
+      for (var i = 6; i <= digits[digits.length - 2]; i++) {
+        digitToRomanNumeral.unshift("X");
+        console.log("Log(6)");
+      }
+    } else if (digits[digits.length - 2] === 9) {
+      digitToRomanNumeral.unshift("XC");
+      console.log("Log(7)");
+    } else {
+      console.log("Log(8): HEY! No second digit value returned!");
+    } //End of 'second digit' conversion.
+    } //End of first 'else' statement.
 
 
     // } else if (digits[digits.length - 1] === 2) {
