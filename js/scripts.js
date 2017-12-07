@@ -74,11 +74,14 @@ var romanNumeralConverter = function(number) {
       digitToRomanNumeral.unshift("L");
       console.log("Log(5)");
     } else if (digits[digits.length - 2] > 5 && digits[digits.length - 2] < 9) {
-      digitToRomanNumeral.unshift("L")
+      var fiveToNine = [];
+      fiveToNine.unshift("L")
       for (var i = 6; i <= digits[digits.length - 2]; i++) {
-        digitToRomanNumeral.unshift("X");
+        fiveToNine.push("X");
         console.log("Log(6)");
       }
+      fiveToNine = fiveToNine.join("");
+      digitToRomanNumeral.unshift(fiveToNine);
     } else if (digits[digits.length - 2] === 9) {
       digitToRomanNumeral.unshift("XC");
       console.log("Log(7)");
