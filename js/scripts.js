@@ -33,22 +33,42 @@ var romanNumeralConverter = function(number) {
   } else {
     digits.push(number);
     //digits.number.toString().split("");
+
+    //Function for converting digits 1, 2, & 3
     if (digits[digits.length - 1] < 4) {
-      console.log("Log(5)");
       for (var i = 1; i <= digits[digits.length - 1]; i++) {
         digitToRomanNumeral.push("I");
         console.log("Log(3)");
+      }
+      //Converting a digit of 4.
+    } else if (digits[digits.length - 1] === 4) {
+      digitToRomanNumeral.push("IV");
+      console.log("Log(4)");
+    } else if (digits[digits.length - 1] === 5) {
+      digitToRomanNumeral.push("V");
+      console.log("Log(5)");
+    } else if (digits[digits.length - 1] > 5 && digits[digits.length - 1] < 9) {
+      digitToRomanNumeral.push("V")
+      for (var i = 6; i <= digits[digits.length - 1]; i++) {
+        digitToRomanNumeral.push("I");
+        console.log("Log(6)");
+      }
+    } else if (digits[digits.length - 1] === 9) {
+      digitToRomanNumeral.push("IX");
+      console.log("Log(7)");
+    } else {
+        console.log("Log(8): Error! No value returned!");
+      }
     }
-  }
+
+
     // } else if (digits[digits.length - 1] === 2) {
     //   digitToRomanNumeral.push("II");
     // } else if (digits[digits.length - 1] === 3) {
     //   digitToRomanNumeral.push("III");
     console.log("Log(4): "+digitToRomanNumeral);
     return digitToRomanNumeral.join("");
-  }
-
-}; //End of 'romanNumeralConverter' function.
+  }; //End of 'romanNumeralConverter' function.
 
 
 //FRONT END LOGIC

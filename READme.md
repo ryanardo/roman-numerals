@@ -14,28 +14,29 @@ _WebApp to convert numbers to their corresponding Roman Numeral._
 | :-------------     | :------------- | :------------- |
 | Determine if it is a number | Hi! You are 10 years old! | FALSE |
 | Determine if number is greater than 0 and less than 4,000 | 4,000 | FALSE |
+| Convert a string of digits into an array of digits | 123 | "1", "2", "3" |
+| Recognize the length of a string of digits | 999 | 3 |
 | Convert digits 1, 2, & 3 | 1 | I |
 | Convert the digits 6, 7, & 8 | 8 | VIII |
 | Convert the digit 4 | 4 | IV |
 | Convert the digit 5 | 5 | IV |
 | Convert the digit 9 | 9 | IX |
-| Convert a string of digits into an array of digits | 123 | "1", "2", "3" |
-| Recognize the length of a string of digits | 999 | 3 |
 
-Symbol  Value  
-I       1  
-IV      4  
-V       5  
-IX      9  
-X       10  
-XL      40  
-L       50  
-XC      90  
-C       100  
-CD      400  
-D       500  
-CM      900  
-M       1,000  
+| Symbol | Value |
+| :-------------     | :------------- |
+| I | 1 |
+| IV | 4 |
+| V | 5 |
+| IX | 9 |
+| X | 10 |
+| XL | 40 |
+| L | 50 |
+| XC | 90 |
+| C | 100 |
+| CD | 400 |
+| D | 500 |
+| CM | 900 |
+| M | 1,000 |
 
 ## Setup/Installation Requirements
 
