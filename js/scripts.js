@@ -88,7 +88,38 @@ var romanNumeralConverter = function(number) {
     } else {
       console.log("Log(8): HEY! No second digit value returned!");
     } //End of 'second digit' conversion.
-    } //End of first 'else' statement.
+
+    if (digits[digits.length - 3] < 4) {
+      for (var i = 1; i <= digits[digits.length - 3]; i++) {
+        digitToRomanNumeral.unshift("C");
+        console.log("Log(9)");
+      }
+      //Converting a digit of 4.
+    } else if (digits[digits.length - 3] === 4) {
+      digitToRomanNumeral.unshift("CD");
+      console.log("Log(10)");
+    } else if (digits[digits.length - 3] === 5) {
+      digitToRomanNumeral.unshift("D");
+      console.log("Log(11)");
+    } else if (digits[digits.length - 3] > 5 && digits[digits.length - 3] < 9) {
+      var fiveToNine = [];
+      fiveToNine.unshift("D")
+      for (var i = 6; i <= digits[digits.length - 3]; i++) {
+        fiveToNine.push("C");
+        console.log("Log(12)");
+      }
+      fiveToNine = fiveToNine.join("");
+      digitToRomanNumeral.unshift(fiveToNine);
+    } else if (digits[digits.length - 3] === 9) {
+      digitToRomanNumeral.unshift("CM");
+      console.log("Log(13)");
+    } else {
+      console.log("Log(14): HEY! No third digit value returned!");
+    } //End of 'Third digit' conversion.
+
+
+
+  } //End of first 'else' statement.
 
 
     // } else if (digits[digits.length - 1] === 2) {
@@ -97,7 +128,7 @@ var romanNumeralConverter = function(number) {
     //   digitToRomanNumeral.push("III");
     console.log("Log(4): "+digitToRomanNumeral);
     return digitToRomanNumeral.join("");
-  }; //End of 'romanNumeralConverter' function.
+}; //End of 'romanNumeralConverter' function.
 
 
 //FRONT END LOGIC

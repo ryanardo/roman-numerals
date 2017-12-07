@@ -21,6 +21,9 @@ _WebApp to convert numbers to their corresponding Roman Numeral._
 | Convert the digit 4 | 4 | IV |
 | Convert the digit 5 | 5 | IV |
 | Convert the digit 9 | 9 | IX |
+| Convert second digits similarly to first | 33 | XXXIII |
+| Convert third digits similarly to first | 333 | CCCXXXIII |
+| Convert fourth digits similarly to first | 3333 | MMMCCCXXXIII |
 
 | Symbol | Value |
 | :-------------     | :------------- |
