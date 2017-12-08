@@ -1,6 +1,4 @@
 //BACK END LOGIC
-var number;
-var isNumber = /\d/g;
 var isNotNumber = /[^\d]/g;
 var digitToRomanNumeral = [];
 var digits = [];
@@ -12,7 +10,6 @@ var unshifter = function(thing) {
 
 var romanNumeralConverter = function(number) {
   if (number.toString().match(isNotNumber) || number < 1 || number > 3999) {
-    console.log("Log(1)");
     return "Error! Please enter a number between 1 and 3,999.";
   } else {
     digits.push(number);
